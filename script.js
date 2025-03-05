@@ -1,21 +1,39 @@
 const button = document.querySelector('button');
 const p = document.querySelector('p')
 
-const random = () => {
-    return Math.floor(Math.random() * 3);
+const sentences = [
+    "I'm busy -< I'm swamped",
+    "I'm undecided -> I'm on the fence",
+    "Don't worry about it -> It's no big deal",
+    "It's too late -> That ship has sailed",
+    "It's raining a lot -> It's pouring",
+    "I totally forgot -> It slipped my mind"
+];
+
+function getRandomSentence() {
+    const randomIndex = Math.floor(Math.random() * sentences.length)
+    return sentences[randomIndex];
 }
 
 button.addEventListener('click', function () {
-    const randomEnglish = random()
+    p.innerText = getRandomSentence();
+});
 
-    if (randomEnglish === 1) {
-        p.innerText = "I'm busy -> I'm swamped"
-    } else if (randomEnglish === 2) {
-        p.innerText = "I'm undecided -> I'm on the fence"
-    } else {
-        p.innerText = "Don't worry about it -> It's no big deal"
-    }
-})
+// const random = () => {
+//     return Math.floor(Math.random() * 3);
+// }
+
+// button.addEventListener('click', function () {
+//     const randomEnglish = random()
+
+//     if (randomEnglish === 1) {
+//         p.innerText = "I'm busy -> I'm swamped"
+//     } else if (randomEnglish === 2) {
+//         p.innerText = "I'm undecided -> I'm on the fence"
+//     } else {
+//         p.innerText = "Don't worry about it -> It's no big deal"
+//     }
+// })
 
 //버튼 누를 때 실행 될 이벤트
 
